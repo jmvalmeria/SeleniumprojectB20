@@ -45,7 +45,7 @@ public class TestNG_Practices {
 
         String expectTitle = "apple";
         String actualTitle = driver.getTitle();
-        Assert.assertEquals(actualTitle,expectTitle, "Title are not matching!");
+        Assert.assertTrue(actualTitle.contains(expectTitle), "Title are not matching!");
     }
 
 
