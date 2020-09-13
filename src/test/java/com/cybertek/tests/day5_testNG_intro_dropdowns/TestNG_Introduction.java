@@ -6,12 +6,12 @@ import org.testng.annotations.Test;
 
 public class TestNG_Introduction {
 
-    @BeforeMethod //It runs 1 before each method is running
+    @BeforeMethod //It runs 1 before each Test method is running
     public void setUpMethod(){
         System.out.println("Before Method is running...");
     }
 
-    @AfterMethod //It runs 1 after each method is running
+    @AfterMethod //It runs 1 after each Test method had run
     public void tearDownMethod(){
         System.out.println("After method is running...");
     }
