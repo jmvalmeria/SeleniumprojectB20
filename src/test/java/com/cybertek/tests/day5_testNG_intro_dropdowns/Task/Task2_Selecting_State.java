@@ -36,26 +36,26 @@ public class Task2_Selecting_State {
 
     @Test
     public void dropDown_test1() throws InterruptedException {
-        Select simpleDropDown = new Select(driver.findElement(By.id("state")));
+        Select stateDropDown = new Select(driver.findElement(By.id("state")));
 
         //3.Select Illinois
         Thread.sleep(2000);
-        simpleDropDown.selectByVisibleText("Illinois");
-        String actualSelectedOption1 = simpleDropDown.getFirstSelectedOption().getText();
+        stateDropDown.selectByVisibleText("Illinois");
+        String actualSelectedOption1 =  stateDropDown.getFirstSelectedOption().getText();
         String expectedSelectedOption1 = "Illinois";
 
         Assert.assertEquals(actualSelectedOption1,expectedSelectedOption1, "Illinois is not selected");
         //4.Select Virginia
         Thread.sleep(2000);
-        simpleDropDown.selectByVisibleText("Virginia");
-        String actualSelectedOption2 = simpleDropDown.getFirstSelectedOption().getText();
+        stateDropDown.selectByVisibleText("Virginia");
+        String actualSelectedOption2 =  stateDropDown.getFirstSelectedOption().getText();
         String expectedSelectedOption2 = "Virginia";
 
         Assert.assertEquals(actualSelectedOption2,expectedSelectedOption2, "Virginia is not selected");
         //5.Select California
         Thread.sleep(2000);
-        simpleDropDown.selectByVisibleText("California");
-        String actualSelectedOption3 = simpleDropDown.getFirstSelectedOption().getText();
+        stateDropDown.selectByVisibleText("California");
+        String actualSelectedOption3 =  stateDropDown.getFirstSelectedOption().getText();
         String expectedSelectedOption3 = "California";
 
         Assert.assertEquals(actualSelectedOption3,expectedSelectedOption3, "California is not selected");
@@ -70,26 +70,26 @@ public class Task2_Selecting_State {
 
     @Test
     public void dropDown_test2() throws InterruptedException {
-        Select simpleDropDown = new Select(driver.findElement(By.cssSelector("select#state")));
+        Select stateDropDown = new Select(driver.findElement(By.cssSelector("select#state")));
 
         //3.Select Illinois
         Thread.sleep(2000);
-        simpleDropDown.selectByValue("IL");
-        String actualSelectedOption1 = simpleDropDown.getFirstSelectedOption().getText();
+        stateDropDown.selectByValue("IL");
+        String actualSelectedOption1 = stateDropDown.getFirstSelectedOption().getText();
         String expectedSelectedOption1 = "Illinois";
 
         Assert.assertEquals(actualSelectedOption1,expectedSelectedOption1, "Illinois is not selected");
         //4.Select Virginia
         Thread.sleep(2000);
-        simpleDropDown.selectByValue("VA");
-        String actualSelectedOption2 = simpleDropDown.getFirstSelectedOption().getText();
+        stateDropDown.selectByValue("VA");
+        String actualSelectedOption2 = stateDropDown.getFirstSelectedOption().getText();
         String expectedSelectedOption2 = "Virginia";
 
         Assert.assertEquals(actualSelectedOption2,expectedSelectedOption2, "Virginia is not selected");
         //5.Select California
         Thread.sleep(2000);
-        simpleDropDown.selectByValue("CA");
-        String actualSelectedOption3 = simpleDropDown.getFirstSelectedOption().getText();
+        stateDropDown.selectByValue("CA");
+        String actualSelectedOption3 = stateDropDown.getFirstSelectedOption().getText();
         String expectedSelectedOption3 = "California";
 
         Assert.assertEquals(actualSelectedOption3,expectedSelectedOption3, "California is not selected");
@@ -104,26 +104,26 @@ public class Task2_Selecting_State {
 
     @Test
     public void dropDown_test3() throws InterruptedException {
-        Select simpleDropDown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
+        Select stateDropDown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
 
         //3.Select Illinois
         Thread.sleep(2000);
-        simpleDropDown.selectByIndex(14);
-        String actualSelectedOption1 = simpleDropDown.getFirstSelectedOption().getText();
+        stateDropDown.selectByIndex(14);
+        String actualSelectedOption1 = stateDropDown.getFirstSelectedOption().getText();
         String expectedSelectedOption1 = "Illinois";
 
         Assert.assertEquals(actualSelectedOption1,expectedSelectedOption1, "Illinois is not selected");
         //4.Select Virginia
         Thread.sleep(2000);
-        simpleDropDown.selectByIndex(47);
-        String actualSelectedOption2 = simpleDropDown.getFirstSelectedOption().getText();
+        stateDropDown.selectByIndex(47);
+        String actualSelectedOption2 = stateDropDown.getFirstSelectedOption().getText();
         String expectedSelectedOption2 = "Virginia";
 
         Assert.assertEquals(actualSelectedOption2,expectedSelectedOption2, "Virginia is not selected");
         //5.Select California
         Thread.sleep(2000);
-        simpleDropDown.selectByIndex(5);
-        String actualSelectedOption3 = simpleDropDown.getFirstSelectedOption().getText();
+        stateDropDown.selectByIndex(5);
+        String actualSelectedOption3 = stateDropDown.getFirstSelectedOption().getText();
         String expectedSelectedOption3 = "California";
 
         Assert.assertEquals(actualSelectedOption3,expectedSelectedOption3, "California is not selected");
