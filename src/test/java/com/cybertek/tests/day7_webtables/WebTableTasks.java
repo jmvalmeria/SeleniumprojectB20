@@ -42,5 +42,13 @@ public class WebTableTasks {
         //TODO: This is cool to remember staff
 
     }
+    @Test
+    public void p4_verify_if_name_has_an_order(){
+        SmartBearUtilities.verifyOrder(driver,"Bob Feather");
+    }
+    @Test
+    public void p5_verify_printNameAndCities(){
+        SmartBearUtilities.printNamesAndCities(driver);
+    }
 
 }
