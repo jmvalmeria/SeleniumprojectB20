@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,7 +45,7 @@ public class Tasks7_8 {
         //This down Statement finds the current month of the year other approach
         //String expectingResult = actualMonth.getDisplayName(TextStyle.FULL, new Locale("en","USA"));
 
-        String expectingResult = actualMonth.toString().toLowerCase();
+        String expectingResult = LocalDateTime.now().getMonth().name().toLowerCase();
         String actualResult = DOB.getFirstSelectedOption().getText().toLowerCase();
 
         Assert.assertEquals(actualResult,expectingResult, "Month is not matching, verification FAILED!!!");

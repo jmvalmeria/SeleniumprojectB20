@@ -34,16 +34,14 @@ public class SmartBearUtilities {
     •Create a new TestNG test to test if the method is working as expected.*/
         List<WebElement> nameList = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//tr/td[2]"));
 
-        boolean isNameInGrid = false;
-
         for (WebElement each : nameList){
             if(each.getText().equals(name)){
-                isNameInGrid = true;
+                Assert.assertTrue(true);
                 return;
             }
         }
 
-        Assert.assertTrue(isNameInGrid, ""+name+" has no orders!!!");
+        Assert.fail(""+name+" does not exist in orders list! Verification FAILED!!!");
     }
 
     public static void printNamesAndCities(WebDriver driver){
@@ -56,12 +54,12 @@ public class SmartBearUtilities {
         //•Name1: name , City1: city
         //•Name2: name , City2: city
 
-        List<WebElement> names = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//td[2]"));
-        List<WebElement> cities = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//td[7]"));
+        List<WebElement> namesList = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//td[2]"));
+        List<WebElement> citiesList = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//td[7]"));
 
         int index = 1;
-        for (int i = 0; i < names.size(); i++){
-            System.out.println("Name"+index+": "+names.get(i).getText()+" , City"+index+": "+cities.get(i).getText());
+        for (int i = 0; i < namesList.size(); i++){
+            System.out.println("Name"+index+": "+namesList.get(i).getText()+" , City"+index+": "+citiesList.get(i).getText());
             index++;
         }
     }
