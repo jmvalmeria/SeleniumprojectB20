@@ -25,12 +25,12 @@ public class AlertsPractices {
 
     @Test
     public void p1_information_alert_practice(){
-        //TC #2: Confirmationalert practice
+        //TC #1: Information alert practice
         //1.Open browser
         //2.Go to website: http://practice.cybertekschool.com/javascript_alerts
-        //3.Click to “Click for JS Confirm” button
+        //3.Click to “Click for JS Alert”button
         //4.Click to OK button from the alert
-        //5.Verify “You clicked: Ok” text is displayed.
+        //5.Verify “You successfulyclicked an alert”text is displayed.
 
         WebElement warningAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
         warningAlertButton.click();
@@ -49,4 +49,58 @@ public class AlertsPractices {
 
     }
 
+    @Test
+    public void p2_confirmation_alert_practice(){
+        //TC #2: Confirmationalert practice
+        //1.Open browser
+        //2.Go to website: http://practice.cybertekschool.com/javascript_alerts
+        //3.Click to “Click for JS Confirm” button
+        //4.Click to OK button from the alert
+        //5.Verify “You clicked: Ok” text is displayed.
+
+        WebElement warningAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Confirm']"));
+        warningAlertButton.click();
+
+        //1.- Create the Alert Instance
+        Alert alert = driver.switchTo().alert();
+        //2.- Then click Ok, We can accept() or dismiss() the confirmation alert
+        alert.accept();
+
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+
+        BrowserUtils.wait(2);
+
+        Assert.assertTrue(resultText.isDisplayed(), "Result text is not displayed. Verification FAILED!!!");
+
+    }
+
+    @Test
+    public void p3_confirmation_alert_practice(){
+        //TC #3: Information alert practice
+        //1.Open browser
+        //2.Go to website: http://practice.cybertekschool.com/javascript_alerts
+        //3.Click to “Click for JS Prompt” button
+        //4.Send “hello”text to alert
+        //5.Click to OK button from the alert
+        //6.Verify “You entered:  hello” text is displayed.
+
+        WebElement warningAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Prompt']"));
+        warningAlertButton.click();
+
+        //1.- Create the Alert Instance
+        Alert alert = driver.switchTo().alert();
+        //2.- Then click Ok, We can accept() or dismiss() the confirmation alert
+        alert.sendKeys("Hello");
+
+        BrowserUtils.wait(3);
+
+        alert.accept();
+
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+
+        BrowserUtils.wait(2);
+
+        Assert.assertTrue(resultText.isDisplayed(), "Result text is not displayed. Verification FAILED!!!");
+
+    }
 }
