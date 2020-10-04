@@ -1,4 +1,4 @@
-package com.cybertek.softSkills;
+package com.cybertek.softSkills.Vytrack;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
